@@ -1,0 +1,29 @@
+/*
+ * os_init.c
+ *
+ *  Created on: Feb 18, 2015
+ *      Author: m6gpn
+ */
+
+#include "os.h"
+
+int running = 1;
+
+void OS_Init(){
+	// Initialize PPP and PPPMax[]
+	int PPPLen = MAXPROCESS;
+	int PPP[PPPLen];
+	int PPPMax[PPPLen];
+}
+
+void OS_Start(){
+
+	while (running){
+		//OS is running do os stuff here.
+	}
+}
+
+void OS_Abort(){
+	//will make the OS exit.
+	running = 0;
+}

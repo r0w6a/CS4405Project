@@ -1,0 +1,22 @@
+
+
+
+#include <stdio.h>
+#include "os.h"
+
+int main()
+{
+	// This has to be first init stuff
+	OS_init();
+
+
+
+	// here we can only call OS_Create(), OS_InitSem(), and OS_InitFiFo()
+
+
+	// Boot the OS
+	OS_Start(); // This never returns?
+
+	return 0;
+}
+

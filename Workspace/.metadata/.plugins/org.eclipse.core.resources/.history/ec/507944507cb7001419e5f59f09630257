@@ -1,0 +1,20 @@
+/*
+ * os_init.c
+ *
+ *  Created on: Feb 18, 2015
+ *      Author: m6gpn
+ */
+
+#include "os.h"
+itn running = 1;
+
+void OS_Init(){}
+
+void OS_Start(){
+
+	while (running){
+		//OS is running do os stuff here.
+	}
+}
+
+void OS_Abort(){}
