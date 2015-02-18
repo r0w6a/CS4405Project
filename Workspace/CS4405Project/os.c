@@ -1,6 +1,4 @@
 
-
-
 #include <stdio.h>
 #include "os.h"
 
@@ -15,7 +13,7 @@ int main()
 	//TODO
 
 	// Boot the OS
-	OS_Start(); // This never returns?
+	OS_Start(); 
 
 	return 0;
 }
