@@ -144,6 +144,11 @@ ELF := CS4405Project.elf
 # Paths to C, C++, and assembly source files.
 C_SRCS += hello_world.c
 C_SRCS += os.c
+C_SRCS += os_init.c
+C_SRCS += os_processmanage.c
+C_SRCS += os_semaphore.c
+C_SRCS += os_fifo.c
+C_SRCS += os_memory.c
 CXX_SRCS :=
 ASM_SRCS :=
 

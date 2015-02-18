@@ -1,0 +1,29 @@
+
+
+
+#include <stdio.h>
+#include "os.h"
+
+int main()
+{
+  printf("aa\n");
+
+  return 0;
+}
+
+
+void OS_Init(){
+
+}
+
+void OS_Start(){
+
+	int running = 1;
+	while (running){
+
+	}
+}
+
+void OS_Abort(){
+
+}

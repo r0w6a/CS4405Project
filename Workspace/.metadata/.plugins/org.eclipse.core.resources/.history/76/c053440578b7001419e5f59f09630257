@@ -1,0 +1,22 @@
+
+
+
+#include <stdio.h>
+
+int main()
+{
+  printf("aa\n");
+
+  return 0;
+}
+
+
+void OS_Init(){
+
+}
+void OS_Start(){
+
+}
+void OS_Abort(){
+
+}

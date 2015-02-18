@@ -2,6 +2,7 @@
 
 
 #include <stdio.h>
+#include "os.h"
 
 int main()
 {
@@ -9,3 +10,4 @@ int main()
 
   return 0;
 }
+
