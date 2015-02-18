@@ -9,7 +9,19 @@
 #include "os.h"
 
 
-PID  OS_Create(void (*f)(void), int arg, unsigned int level, unsigned int n){}
+struct process {
+	int scheduleLevel;
+	PID pid;
+	int n;
+};
+
+
+PID  OS_Create(void (*f)(void), int arg, unsigned int level, unsigned int n){
+	return 0;
+}
 void OS_Terminate(void){}
 void OS_Yield(void){}
-int  OS_GetParam(void){}
+
+int  OS_GetParam(void){
+	return 0;
+}

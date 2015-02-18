@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: C:/opt/fcs/software/altera/13.0sp1/University_Program/NiosII_Computer_Systems/DE2/DE2_Media_Computer/vhdl/nios_system.sopcinfo
  *
- * Generated: Wed Feb 18 09:12:52 AST 2015
+ * Generated: Wed Feb 18 12:07:49 AST 2015
  */
 
 /*
