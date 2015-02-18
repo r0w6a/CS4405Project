@@ -12,13 +12,14 @@
  * to reduce the memory footprint for a given application, see the
  * "small_hello_world" template.
  *
- */
+ *
 
 #include <stdio.h>
 
 int main()
 {
-  printf("Hello from Nios II!\n");
+  printf("Hello world!\n");
 
   return 0;
 }
+*/

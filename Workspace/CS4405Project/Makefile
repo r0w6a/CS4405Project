@@ -142,7 +142,8 @@ ACDS_VERSION := 13.0sp1
 ELF := CS4405Project.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := hello_world.c
+C_SRCS += hello_world.c
+C_SRCS += os.c
 CXX_SRCS :=
 ASM_SRCS :=
 
