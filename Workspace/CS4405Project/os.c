@@ -4,7 +4,7 @@
 
 int main()
 {
-	// called first to init the OS
+	// called first to init the OS...
 	OS_Init();
 
 
