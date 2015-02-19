@@ -8,6 +8,21 @@
 
 #include "os.h"
 
-void OS_InitSem(int s, int n){}
-void OS_Wait(int s){}
+/*semaphore struct*/
+struct semaphore{
+  
+  process*  processQueue[MAXPROCESS];  // pointer to process
+  int       process_count;
+  int       value;
+}
+
+semaphore semaphore_Array[MAXSEM];
+void OS_InitSem(int s, int n){
+  semaphore_Array[s].value = n; //set semaphore value to resource available
+}
+void OS_Wait(int s){
+  //need to disable interrupt
+  // next process to run
+  
+}
 void OS_Signal(int s){}
