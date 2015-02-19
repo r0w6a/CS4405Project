@@ -9,12 +9,12 @@
 #include "os.h"
 
 /*semaphore struct*/
-struct semaphore{
-  
-  process*  processQueue[MAXPROCESS];  // pointer to process
-  int       process_count;
-  int       value;
-}
+typedef struct{
+
+  int   value;
+  int   processCount;
+  struct process *list;
+}semaphore;
 
 semaphore semaphore_Array[MAXSEM];
 void OS_InitSem(int s, int n){
@@ -22,7 +22,22 @@ void OS_InitSem(int s, int n){
 }
 void OS_Wait(int s){
   //need to disable interrupt
-  // next process to run
-  
+  semaphore_Array[s].value--;
+ 
+        if (semaphore_Array[s].value < 0)
+        {
+           //add process to list
+        }
+  //enable Interrupt      
 }
-void OS_Signal(int s){}
+void OS_Signal(int s){
+  //Disable Interrupt
+  semaphore_Array[s].value++;
+  
+        if (semaphore_Array[s].value <= 0)
+       {
+        //remove process from list
+       }
+       
+  //enable interrupt     
+}
