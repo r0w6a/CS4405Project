@@ -33,3 +33,19 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY org.eclipse.cdt.core 1 0 2015-02-18 12:06:51.205
 !MESSAGE Indexed 'CS4405Project_bsp' (101 sources, 143 headers) in 1.89 sec: 4,564 declarations; 11,042 references; 64 unresolved inclusions; 445 syntax errors; 437 unresolved names (2.72%)
+!SESSION 2015-02-20 16:48:15.547 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -data C:\Users\user\Desktop\CS4405Project\Workspace -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-02-20 16:48:16.266
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-02-20 16:48:21.110
+!MESSAGE Indexed 'CS4405Project' (6 sources, 65 headers) in 1.61 sec: 2,496 declarations; 2,718 references; 0 unresolved inclusions; 2 syntax errors; 6 unresolved names (0.11%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-02-20 16:48:22.329
+!MESSAGE Indexed 'CS4405Project_bsp' (101 sources, 159 headers) in 1.09 sec: 6,274 declarations; 12,516 references; 0 unresolved inclusions; 3 syntax errors; 18 unresolved names (0.10%)

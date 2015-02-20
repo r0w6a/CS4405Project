@@ -1,7 +1,11 @@
 
 #include <stdio.h>
 #include "os.h"
-
+#include "os_fifo.h"
+#include "os_init.h"
+#include "os_memory.h"
+#include "os_process.h"
+#include "os_semaphore.h"
 int main()
 {
 	// called first to init the OS...
