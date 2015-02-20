@@ -1,0 +1,44 @@
+/*
+ * os_init.h
+ *
+ *  Created on: Feb 20, 2015
+ *      Author: m6gpn
+ */
+
+#ifndef OS_INIT_H_
+#define OS_INIT_H_
+
+#include "os.h"
+
+int running = TRUE;
+
+void OS_Init(){
+	/* Initialize processes */
+	for ( i = 0; i < MAXPROCESS; ++i )
+	    {
+	        arrProcs[i].pid          = i + 1;
+	        arrProcs[i].level        = -1;
+	        arrProcs[i].state        = TERMINATED;
+	        arrProcs[i].argument     = 0;
+	        arrProcs[i].pc           = 0;
+	    }
+	/* Initialize idle process */
+	//TODO
+	/* init the process queues (only sporadic for dev1)*/
+	//TODO
+
+} // end of init();
+
+void OS_Start(){
+
+	while (running){
+		//OS is running do os stuff here.
+	}
+}
+
+void OS_Abort(){
+	//will make the OS exit.
+	running = FALSE;
+}
+
+#endif /* OS_INIT_H_ */

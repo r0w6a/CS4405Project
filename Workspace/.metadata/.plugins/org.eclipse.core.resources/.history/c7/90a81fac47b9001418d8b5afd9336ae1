@@ -1,0 +1,20 @@
+/*
+ * os_memory.h
+ *
+ *  Created on: Feb 20, 2015
+ *      Author: m6gpn
+ */
+
+#ifndef OS_MEMORY_H_
+#define OS_MEMORY_H_
+
+
+#include "os.h"
+
+
+void   OS_InitMemory(){}
+MEMORY OS_Malloc( int val ){}
+BOOL   OS_Free( MEMORY m ){}
+
+
+#endif /* OS_MEMORY_H_ */

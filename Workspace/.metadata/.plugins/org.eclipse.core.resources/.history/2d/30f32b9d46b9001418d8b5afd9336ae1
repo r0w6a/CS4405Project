@@ -1,0 +1,14 @@
+/*
+ * os_fifo.h
+ *
+ *  Created on: Feb 20, 2015
+ *      Author: m6gpn
+ */
+
+#ifndef OS_FIFO_H_
+#define OS_FIFO_H_
+
+#include "os.h"
+
+
+#endif /* OS_FIFO_H_ */
