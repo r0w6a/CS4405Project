@@ -6,18 +6,20 @@
 #include "os_memory.h"
 #include "os_process.h"
 #include "os_semaphore.h"
+
+
+
+
 int main()
 {
 	// called first to init the OS...
 	OS_Init();
 
-
-
 	// here we can only call OS_Create(), OS_InitSem(), and OS_InitFiFo()
 	//TODO
 
 	// Boot the OS
-	OS_Start(); 
+	OS_Start();
 
 	return 0;
 }

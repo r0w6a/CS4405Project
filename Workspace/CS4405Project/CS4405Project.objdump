@@ -37,47 +37,47 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_info   0000e0b0  00000000  00000000  00008a30  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 00002ec7  00000000  00000000  00016ae0  2**0
+ 10 .debug_abbrev 00002ec8  00000000  00000000  00016ae0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   00008ea5  00000000  00000000  000199a7  2**0
+ 11 .debug_line   00008ec9  00000000  00000000  000199a8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  0000119c  00000000  00000000  0002284c  2**2
+ 12 .debug_frame  0000119c  00000000  00000000  00022874  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    00000de3  00000000  00000000  000239e8  2**0
+ 13 .debug_str    00000de3  00000000  00000000  00023a10  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00001b1b  00000000  00000000  000247cb  2**0
+ 14 .debug_loc    00001b1b  00000000  00000000  000247f3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000050  00000000  00000000  000262e8  2**2
+ 15 .debug_alt_sim_info 00000050  00000000  00000000  00026310  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00000090  00000000  00000000  00026338  2**3
+ 16 .debug_ranges 00000090  00000000  00000000  00026360  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  00028e56  2**0
+ 17 .thread_model 00000003  00000000  00000000  00028e95  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000003  00000000  00000000  00028e59  2**0
+ 18 .cpu          00000003  00000000  00000000  00028e98  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  00028e5c  2**0
+ 19 .qsys         00000001  00000000  00000000  00028e9b  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  00028e5d  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  00028e9c  2**0
                   CONTENTS, READONLY
- 21 .sysid_hash   00000004  00000000  00000000  00028e5e  2**0
+ 21 .sysid_hash   00000004  00000000  00000000  00028e9d  2**0
                   CONTENTS, READONLY
- 22 .sysid_base   00000004  00000000  00000000  00028e62  2**0
+ 22 .sysid_base   00000004  00000000  00000000  00028ea1  2**0
                   CONTENTS, READONLY
- 23 .sysid_time   00000004  00000000  00000000  00028e66  2**0
+ 23 .sysid_time   00000004  00000000  00000000  00028ea5  2**0
                   CONTENTS, READONLY
- 24 .stderr_dev   00000009  00000000  00000000  00028e6a  2**0
+ 24 .stderr_dev   00000009  00000000  00000000  00028ea9  2**0
                   CONTENTS, READONLY
- 25 .stdin_dev    00000009  00000000  00000000  00028e73  2**0
+ 25 .stdin_dev    00000009  00000000  00000000  00028eb2  2**0
                   CONTENTS, READONLY
- 26 .stdout_dev   00000009  00000000  00000000  00028e7c  2**0
+ 26 .stdout_dev   00000009  00000000  00000000  00028ebb  2**0
                   CONTENTS, READONLY
- 27 .sopc_system_name 0000000b  00000000  00000000  00028e85  2**0
+ 27 .sopc_system_name 0000000b  00000000  00000000  00028ec4  2**0
                   CONTENTS, READONLY
- 28 .quartus_project_dir 00000069  00000000  00000000  00028e90  2**0
+ 28 .quartus_project_dir 00000069  00000000  00000000  00028ecf  2**0
                   CONTENTS, READONLY
- 29 .jdi          00004aa3  00000000  00000000  00028ef9  2**0
+ 29 .jdi          00004aa3  00000000  00000000  00028f38  2**0
                   CONTENTS, READONLY
- 30 .sopcinfo     00108489  00000000  00000000  0002d99c  2**0
+ 30 .sopcinfo     00108489  00000000  00000000  0002d9db  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00000000 l    d  .entry	00000000 .entry
@@ -99,6 +99,7 @@ SYMBOL TABLE:
 00000000 l    d  .debug_ranges	00000000 .debug_ranges
 000001f0 l       .text	00000000 alt_after_alt_main
 00000000 l    df *ABS*	00000000 alt_irq_handler.c
+00000000 l    df *ABS*	00000000 main.c
 00000000 l    df *ABS*	00000000 os.c
 00000000 l    df *ABS*	00000000 alt_load.c
 00000530 l     F .text	0000006c alt_load_section
@@ -757,34 +758,40 @@ alt_after_alt_main:
 
 #include "os.h"
 
-FIFO  OS_InitFiFo(){}
+FIFO  OS_InitFiFo(){
      1f4:	deffff04 	addi	sp,sp,-4
      1f8:	df000015 	stw	fp,0(sp)
      1fc:	d839883a 	mov	fp,sp
+	//TODO
+}
      200:	e037883a 	mov	sp,fp
      204:	df000017 	ldw	fp,0(sp)
      208:	dec00104 	addi	sp,sp,4
      20c:	f800283a 	ret
 
 00000210 <OS_Write>:
-void  OS_Write( FIFO f, int val ){}
+void  OS_Write( FIFO f, int val ){
      210:	defffd04 	addi	sp,sp,-12
      214:	df000215 	stw	fp,8(sp)
      218:	df000204 	addi	fp,sp,8
      21c:	e13ffe15 	stw	r4,-8(fp)
      220:	e17fff15 	stw	r5,-4(fp)
+	//TODO
+}
      224:	e037883a 	mov	sp,fp
      228:	df000017 	ldw	fp,0(sp)
      22c:	dec00104 	addi	sp,sp,4
      230:	f800283a 	ret
 
 00000234 <OS_Read>:
-BOOL  OS_Read( FIFO f, int *val ){}
+BOOL  OS_Read( FIFO f, int *val ){
      234:	defffd04 	addi	sp,sp,-12
      238:	df000215 	stw	fp,8(sp)
      23c:	df000204 	addi	fp,sp,8
      240:	e13ffe15 	stw	r4,-8(fp)
      244:	e17fff15 	stw	r5,-4(fp)
+	//TODO
+}
      248:	e037883a 	mov	sp,fp
      24c:	df000017 	ldw	fp,0(sp)
      250:	dec00104 	addi	sp,sp,4
@@ -851,32 +858,38 @@ void OS_Abort(){
 #include "os.h"
 
 
-void   OS_InitMemory(){}
+void   OS_InitMemory(){
      2bc:	deffff04 	addi	sp,sp,-4
      2c0:	df000015 	stw	fp,0(sp)
      2c4:	d839883a 	mov	fp,sp
+	//TODO
+}
      2c8:	e037883a 	mov	sp,fp
      2cc:	df000017 	ldw	fp,0(sp)
      2d0:	dec00104 	addi	sp,sp,4
      2d4:	f800283a 	ret
 
 000002d8 <OS_Malloc>:
-MEMORY OS_Malloc( int val ){}
+MEMORY OS_Malloc( int val ){
      2d8:	defffe04 	addi	sp,sp,-8
      2dc:	df000115 	stw	fp,4(sp)
      2e0:	df000104 	addi	fp,sp,4
      2e4:	e13fff15 	stw	r4,-4(fp)
+	//TODO
+}
      2e8:	e037883a 	mov	sp,fp
      2ec:	df000017 	ldw	fp,0(sp)
      2f0:	dec00104 	addi	sp,sp,4
      2f4:	f800283a 	ret
 
 000002f8 <OS_Free>:
-BOOL   OS_Free( MEMORY m ){}
+BOOL   OS_Free( MEMORY m ){
      2f8:	defffe04 	addi	sp,sp,-8
      2fc:	df000115 	stw	fp,4(sp)
      300:	df000104 	addi	fp,sp,4
      304:	e13fff15 	stw	r4,-4(fp)
+	//TODO
+}
      308:	e037883a 	mov	sp,fp
      30c:	df000017 	ldw	fp,0(sp)
      310:	dec00104 	addi	sp,sp,4
@@ -1027,10 +1040,10 @@ void OS_Signal(int s){
      47c:	f800283a 	ret
 
 00000480 <main>:
-#include "os_init.h"
-#include "os_memory.h"
-#include "os_process.h"
-#include "os_semaphore.h"
+
+
+
+
 int main()
 {
      480:	defffe04 	addi	sp,sp,-8
@@ -1045,7 +1058,7 @@ int main()
 	//TODO
 
 	// Boot the OS
-	OS_Start(); 
+	OS_Start();
      494:	00002740 	call	274 <OS_Start>
 
 	return 0;
@@ -7892,7 +7905,7 @@ void alt_icache_flush (void* start, alt_u32 len)
     4688:	20000726 	beq	r4,zero,46a8 <__call_exitprocs+0x1a0>
     468c:	b9000015 	stw	r4,0(r23)
     4690:	8809883a 	mov	r4,r17
-    4694:	00000000 	call	0 <__alt_mem_SDRAM>
+    4694:	00000000 	call	0 <__reset>
     4698:	bc400017 	ldw	r17,0(r23)
     469c:	883fb71e 	bne	r17,zero,457c <__call_exitprocs+0x74>
     46a0:	003fc506 	br	45b8 <__call_exitprocs+0xb0>
